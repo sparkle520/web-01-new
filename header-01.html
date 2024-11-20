@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="" />
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/css/base.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <style type="text/tailwindcss">
+      html {
+        background: #f6f6fe;
+      }
+      .primary {
+        color: #1f1e22;
+      }
+      .underline-hover-primary {
+        background: linear-gradient(to right, #b9b8b8, #8f8f8f) no-repeat right
+          bottom;
+        transition: all;
+        background-size: 0 2px;
+        transition: background-size 700ms;
+      }
+      .underline-hover-primary:hover {
+        background-position-x: left;
+        background-size: 100% 2px;
+      }
+      .header-bg {
+        background: #ffffff;
+        position: relative;
+      }
+      .acitive-nav {
+        color: #1f1e22;
+        background: linear-gradient(to right, #b9b8b8, #8f8f8f) no-repeat left
+          bottom;
+        background-size: 100% 1rem;
+      }
+      .nav-underline-hover-primary {
+        background: linear-gradient(to right, #b9b8b8, #6f6f70) no-repeat right
+          bottom;
+        background-size: 0 1rem;
+        transition: background-size 700ms;
+      }
+      .nav-underline-hover-primary:hover {
+        background-position-x: left;
+        background-size: 100% 1rem;
+      }
+      @media (max-width: 640px) {
+        .sm-hidden {
+          display: none;
+        }
+      }
+      @media (max-width: 768px) {
+        .mobile-hidden {
+          display: none;
+        }
+      }
+      @media (min-width: 768px) {
+        .pc-hidden {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1280px) {
+      }
+      @media (min-width: 1536px) {
+      }
+      @media only screen and (max-width: 1024px) {
+        .tablet-hidden {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div
+      class="w-full flex flex-col justify-center text-xl px-2 header-bg rounded-lg shadow-sm"
+    >
+
+      <div
+        class="container overflow-scroll mx-auto flex md:h-20 h-[4rem] justify-between"
+      >
+        <div class="flex justify-center my-auto font-bold">logo</div>
+        <ul
+          class="ml-auto mobile-hidden flex px-4 gap-5 flex-row my-auto justify-start overflow-scroll font-bold"
+        >
+          <li
+            class="cursor-pointer shrink-0 acitive-nav max-w-3/5 ease-in-out transition relative"
+          >
+            <a href="">주요뉴스</a>
+          </li>
+          <li
+            class="cursor-pointer shrink-0 ease-in-out hover:primary nav-underline-hover-primary transition relative"
+          >
+            <a href="">세계</a>
+          </li>
+          <li
+            class="cursor-pointer shrink-0 nav-underline-hover-primary ease-in-out hover:primary transition relative"
+          >
+            <a href="">사회</a>
+          </li>
+          <li
+            class="cursor-pointer shrink-0 nav-underline-hover-primary ease-in-out hover:primary transition relative"
+          >
+            날씨
+          </li>
+          <li
+            class="cursor-pointer shrink-0 nav-underline-hover-primary ease-in-out hover:primary transition relative"
+          >
+            연예
+          </li>
+          <li
+            class="cursor-pointer shrink-0 nav-underline-hover-primary ease-in-out hover:primary transition relative"
+          >
+            스포츠
+          </li>
+          <li
+            class="cursor-pointer shrink-0 nav-underline-hover-primary ease-in-out hover:primary transition relative"
+          >
+            MBTI
+          </li>
+          <li
+            class="cursor-pointer shrink-0 nav-underline-hover-primary ease-in-out hover:primary transition relative"
+          >
+            운세
+          </li>
+          <li
+            class="cursor-pointer shrink-0 nav-underline-hover-primary ease-in-out hover:primary transition relative"
+          >
+            음식&다이어트
+          </li>
+        </ul>
+        <div
+          class="my-auto scale-0 md:scale-100 cursor-pointer transition ease-in-out hover:scale-125"
+        >
+          <!-- <svg
+        class="theme-btn"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon-tabler icons-tabler-filled icon-tabler-moon"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z"
+        />
+      </svg> -->
+        </div>
+        <ul
+          class="md:scale-0 gap-2 flex flex-row my-auto justify-center font-bold"
+        >
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-list-tree"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 6h11" />
+              <path d="M12 12h8" />
+              <path d="M15 18h5" />
+              <path d="M5 6v.01" />
+              <path d="M8 12v.01" />
+              <path d="M11 18v.01" />
+            </svg>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-row md:h-0 md:overflow-hidden h-[3rem] px-4">
+        <div class="h-[3rem] w-full text-[14px] overflow-scroll">
+          <ul class="h-[3rem] flex overflow-scroll flex-row items-center gap-4">
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              주요뉴스
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              세계
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              사회
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              날씨
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              연예
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              스포츠
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              MBTI
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              운세
+            </li>
+            <li
+              class="font-bold shrink-0 cursor-pointer underline-hover-primary"
+            >
+              음식&다이어트
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

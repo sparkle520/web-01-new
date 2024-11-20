@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="" />
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/css/base.css" rel="stylesheet" type="text/css" />    
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <style type="text/tailwindcss">
+      .linear-bg::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        background: linear-gradient(to top, #f1f0ed 10%, transparent);
+      }
+      html {
+        background: #f6f6fe;
+      }
+      .primary {
+        color: #1f1e22;
+      }
+      .underline-hover-primary {
+        background: linear-gradient(to right, #b9b8b8, #8f8f8f) no-repeat right
+          bottom;
+        transition: all;
+        background-size: 0 2px;
+        transition: background-size 700ms;
+      }
+      .underline-hover-primary:hover {
+        background-position-x: left;
+        background-size: 100% 2px;
+      }
+      .s-dot {
+        position: relative;
+        padding-left: 12px;
+      }
+      .s-dot::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #101010;
+        opacity: 0.5;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      @media (max-width: 640px) {
+        .sm-hidden {
+          display: none;
+        }
+      }
+      @media (max-width: 768px) {
+        .mobile-hidden {
+          display: none;
+        }
+      }
+      @media (min-width: 768px) {
+        .pc-hidden {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1280px) {
+      }
+      @media (min-width: 1536px) {
+      }
+      @media only screen and (max-width: 1024px) {
+        .tablet-hidden {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <script>
+      $(document).ready(function () {
+        $("#header").load("header-01.html");
+      });
+    </script>
+
+    <div class="container px-2 mx-auto flex flex-col">
+      <div class="w-full mb-auto flex flex-col mx-auto mt-2 md:mt-16">
+        <!-- <div class="class-box flex flex-row h-[4rem] w-[72rem] bg-[#ffff] shadow-sm mb-4 rounded-md px-4 py-2">
+        <div class="h-[3rem] w-[70rem]">
+          <ul class="h-[3rem] w-[70rem] flex flex-row items-center gap-4 relative">
+            <div class="absolute cursor-pointer" style="left:50%;top:60%;transform: translate(-50%,50%);"><svg class="hover:scale-[1.3]" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+            <li class="font-bold cursor-pointer underline-hover-primary">temp</li>
+          </ul>
+        </div>
+      </div> -->
+
+        <!-- top -->
+        <div
+          class="grid grid-rows-7 grid-cols-2 min-h-[32rem] md:min-h-[24rem] md:max-h-[26rem] h-[65vh] md:h-[50vh] md:grid-rows-1 w-full gap-2 md:gap-4"
+        >
+          <div
+            class="col-span-2 row-span-3 md:row-span-1 grid grid-rows-5 md:col-span-1"
+          >
+            <div
+              class="w-full bg-[#ffff] overflow-hidden shadow-sm row-span-4 flex items-center justify-center font-bold"
+            >
+              <a class="w-full h-full" href="">
+                <img
+                  class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                  src="/img/1288651.png"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div
+              class="mt-2 text-md xl:text-2xl row-span-1 font-bold cursor-pointer"
+            >
+              <span class="underline-hover-primary"
+                >String Quartet No.14 in D minor D.810 Death and the
+                Maiden</span
+              >
+            </div>
+          </div>
+          <div class="col-span-2 row-span-4 md:row-span-1 md:col-span-1">
+            <ul
+              class="grid grid-rows-2 grid-cols-2 w-full h-full gap-1 md:gap-4"
+            >
+              <li class="col-span-1 row-span-1 flex flex-col gap-1 md:gap-2">
+                <div
+                  class="w-full h-4/5 flex items-center overflow-hidden justify-center font-bold bg-[#ffff] shadow-sm"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <span class="over-1">
+                  <span class="underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                  </span>
+                </span>
+              </li>
+              <li class="col-span-1 flex flex-col gap-2">
+                <div
+                  class="w-full h-4/5 flex items-center overflow-hidden justify-center font-bold bg-[#ffff] shadow-sm"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <span class="over-1">
+                  <span class="underline-hover-primary cursor-pointer">
+                    short
+                  </span>
+                </span>
+              </li>
+              <li class="col-span-1 flex flex-col gap-2">
+                <div
+                  class="w-full h-4/5 flex items-center overflow-hidden justify-center font-bold bg-[#ffff] shadow-sm"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <span class="over-1">
+                  <span class="underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                  </span>
+                </span>
+              </li>
+              <li class="col-span-1 flex flex-col gap-2">
+                <div
+                  class="w-full h-4/5 flex items-center overflow-hidden justify-center font-bold bg-[#ffff] shadow-sm"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <span class="over-1">
+                  <span class="underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                  </span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#1f1e22] w-5/6 md:w-full md:h-1 md:mt-10 mx-auto h-[1px] mt-4"
+        ></div>
+
+        <div class="w-full gap-4 grid grid-cols-8 col flex-row mt-4 md:mt-10">
+          <div class="flex col-span-8 md:col-span-6 flex-col">
+            <div
+              class="w-full md:max-h-[20rem] grid-rows-7 grid grid-cols-2 flex-row gap-4"
+            >
+              <div
+                class="row-span-3 md:row-span-7 col-span-2 md:col-span-1 flex flex-col"
+              >
+                <div
+                  class="w-full h-full bg-[#ffff] cursor-pointer overflow-hidden shadow-sm relative linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <span
+                    class="font-bold w-full text-sm xl:text-xl underline-hover-primary bg-white absolute bottom-0 px-4 py-2 z-10"
+                  >
+                    Recomposed By Max Richter s s s s s fasfas fasfasfa
+                  </span>
+                </div>
+              </div>
+              <div
+                class="row-span-4 md:row-span-7 col-span-2 grid grid-rows-2 min-h-64 md:col-span-1 gap-2 md:gap-[1rem]"
+              >
+                <div class="col-span-1 row-span-1 grid grid-cols-2 gap-3">
+                  <div
+                    class="col-span-1 bg-[#ffff] shadow-sm shrink-0 overflow-hidden"
+                  >
+                    <a class="w-full h-full" href="">
+                      <img
+                        class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                        src="/img/1288651.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="col-span-1 my-auto">
+                    <span
+                      class="xl:font-bold text-sm cursor-pointer md:text-lg underline-hover-primary"
+                      >you’ve changed, i’ve changed</span
+                    >
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div
+                    class="col-span-1 bg-[#ffff] shadow-sm shrink-0 overflow-hidden"
+                  >
+                    <a class="w-full h-full" href="">
+                      <img
+                        class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                        src="/img/1288651.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="col-span-1 my-auto">
+                    <span
+                      class="xl:font-bold text-sm cursor-pointer md:text-lg underline-hover-primary"
+                      >you’ve changed, i’ve changed</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="bg-[#1f1e22] w-5/6 mx-auto h-[1px] pc-hidden mt-4 mb-1"
+                ></div>
+              </div>
+            </div>
+            <div
+              class="grid w-full mt-2 md:mt-10 grid-rows-3 grid-cols-3 grid-flow-col gap-2 xl:gap-4 min-h-[30rem] h-[50vh] md:h-[20vw] md:min-h-[15rem]"
+            >
+              <div
+                class="row-span-1 col-span-3 md:row-span-3 md:col-span-1 bg-[#ffff] cursor-pointer shadow-sm relative overflow-hidden linear-bg"
+              >
+                <a class="w-full h-full" href="">
+                  <img
+                    class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                    src="/img/1288651.png"
+                    alt=""
+                  />
+                </a>
+                <div
+                  class="md:font-bold w-full text-sm underline-hover-primary xl:text-xl absolute bottom-0 px-4 py-1 bg-white line-clamp-2 z-10"
+                >
+                  sIt's made up entirely of fiction, every word stacked
+                </div>
+              </div>
+              <div
+                class="row-span-1 col-span-3 md:row-span-3 md:col-span-1 bg-[#ffff] cursor-pointer shadow-sm relative overflow-hidden linear-bg"
+              >
+                <a class="w-full h-full" href="">
+                  <img
+                    class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                    src="/img/1288651.png"
+                    alt=""
+                  />
+                </a>
+                <div
+                  class="md:font-bold w-full bg-white text-sm underline-hover-primary xl:text-xl absolute bottom-0 px-4 py-1 line-clamp-2 z-10"
+                >
+                  It's made up entirely of fiction, every word stacked
+                </div>
+              </div>
+              <div
+                class="row-span-1 col-span-3 md:row-span-3 md:col-span-1 bg-[#ffff] cursor-pointer shadow-sm relative overflow-hidden linear-bg"
+              >
+                <a class="w-full h-full" href="">
+                  <img
+                    class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                    src="/img/1288651.png"
+                    alt=""
+                  />
+                </a>
+                <div
+                  class="w-full md:font-bold text-sm bg-white underline-hover-primary xl:text-xl absolute bottom-0 px-4 py-1 line-clamp-2 z-10"
+                >
+                  It's made up entirely of fiction, every word stackeds
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-6 md:mt-10 mb-10 w-full h-[40vh] min-h-[20rem] md:h-[42vh] md:max-h-[19rem] xl:max-h-[22rem] relative gap-2 grid grid-rows-2 md:grid-rows-5 grid-cols-2"
+            >
+              <div
+                class="md:row-span-3 col-span-full row-span-1 md:col-span-1 bg-white relative cursor-pointer overflow-hidden linear-bg"
+              >
+                <a class="w-full h-full" href="">
+                  <img
+                    class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                    src="/img/1288651.png"
+                    alt=""
+                  />
+                </a>
+                <div
+                  class="w-full z-10 xl:font-bold text-sm underline-hover-primary xl:text-xl absolute bottom-0 px-4 py-1 line-clamp-2"
+                >
+                  Its's made up entirely of fiction, every word stacked
+                </div>
+              </div>
+
+              <div
+                class="md:row-span-2 row-span-1 col-span-2 md:col-span-1 md:col-start-1 grid grid-cols-2 gap-2 xl:gap-4"
+              >
+                <div
+                  class="col-span-1 relative bg-white cursor-pointer overflow-hidden linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <div
+                    class="w-full xl:font-bold text-sm underline-hover-primary md:text-sm absolute bottom-0 px-4 py-1 z-10 line-clamp-2"
+                  >
+                    It'ss made up entirely of fiction, every word stacked
+                  </div>
+                </div>
+                <div
+                  class="col-span-1 relative bg-white cursor-pointer overflow-hidden linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <div
+                    class="w-full xl:font-bold text-sm underline-hover-primary md:text-sm absolute bottom-0 px-4 py-1 z-10 line-clamp-2"
+                  >
+                    It's made up entirely of fiction, every word stacked
+                  </div>
+                </div>
+              </div>
+              <div
+                class="md:row-span-5 divide mobile-hidden divide-y divide-solid col-span-2 row-span-3 md:col-span-1 md:col-start-2 md:row-start-1 grid grid-rows-7 gap-1 md:gap-3 px-1 md:px-8 md:py-4"
+              >
+                <span class="over-1">
+                  <span class="s-dot underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                    sssssssssssssssssss
+                  </span>
+                </span>
+
+                <span class="over-1">
+                  <span class="s-dot underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                    sssssssssssssssssss
+                  </span>
+                </span>
+
+                <span class="over-1">
+                  <span class="s-dot underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                    sssssssssssssssssss
+                  </span>
+                </span>
+
+                <span class="over-1">
+                  <span class="s-dot underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                    sssssssssssssssssss
+                  </span>
+                </span>
+
+                <span class="over-1">
+                  <span class="s-dot underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                    sssssssssssssssssss
+                  </span>
+                </span>
+
+                <span class="over-1">
+                  <span class="s-dot underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                    sssssssssssssssssss
+                  </span>
+                </span>
+
+                <span class="over-1">
+                  <span class="s-dot underline-hover-primary cursor-pointer">
+                    sSymphony No.5 In B Flat, D.485:1. Allegro
+                    sssssssssssssssssss
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div class="w-full mx-auto font-bold text-center mt-4">temp</div>
+            <div class="bg-[#1f1e22] w-5/6 mx-auto h-[1px] mt-4"></div>
+            <div
+              class="grid md:mb-10 w-full mt-2 md:mt-4 grid-rows-8 md:grid-rows-4 grid-cols-2 grid-flow-col gap-4"
+            >
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+              <div class="row-span-1 col-span-2 md:col-span-1 flex flex-row">
+                <div
+                  class="h-[5rem] shrink-0 my-auto w-2/5 bg-[#ffff] shadow-sm overflow-hidden"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="xl:font-bold text-sm md:text-md ml-2 my-auto">
+                  <span
+                    class="text-sm cursor-pointer md:text-md underline-hover-primary"
+                  >
+                    We took photographs of everything we could see.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full mx-auto font-bold text-center mt-4">temp</div>
+            <div class="bg-[#1f1e22] w-5/6 mx-auto h-[1px] mt-4"></div>
+            <div
+              class="grid w-full mt-4 max-h-[32rem] min-h-48 md:max-h-60 text-sm h-[70vh] grid-rows-3 grid-cols-1 md:grid-rows-4 md:grid-cols-3 grid-flow-col gap-2 xl:gap-4"
+            >
+              <div
+                class="row-span-1 md:row-start-1 md:row-end-5 bg-[#ffff] shadow-sm relative overflow-hidden linear-bg"
+              >
+                <a class="w-full h-full" href="">
+                  <img
+                    class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                    src="/img/1288651.png"
+                    alt=""
+                  />
+                </a>
+                <span
+                  class="w-full xl:font-bold text-md absolute bottom-0 px-4 py-1 cursor-pointer underline-hover-primary bg-white line-clamp-1 z-10"
+                >
+                  if there's love in this life, there's no obstacle.
+                </span>
+              </div>
+              <div
+                class="row-span-1 md:row-start-1 md:row-end-5 bg-[#ffff] relative overflow-hidden linear-bg"
+              >
+                <a class="w-full h-full" href="">
+                  <img
+                    class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                    src="/img/1288651.png"
+                    alt=""
+                  />
+                </a>
+                <span
+                  class="w-full xl:font-bold text-md absolute bottom-0 px-4 py-1 cursor-pointer underline-hover-primary bg-[#f6f6fe] line-clamp-1 z-10"
+                >
+                  if there's love in this life, there's no obstacle.
+                </span>
+              </div>
+              <div
+                class="row-span-1 md:row-start-1 md:row-end-5 bg-[#ffff] shadow-sm relative overflow-hidden linear-bg"
+              >
+                <a class="w-full h-full" href="">
+                  <img
+                    class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                    src="/img/1288651.png"
+                    alt=""
+                  />
+                </a>
+                <span
+                  class="w-full xl:font-bold text-md absolute bottom-0 px-4 py-1 cursor-pointer underline-hover-primary line-clamp-1 z-10"
+                >
+                  if there's love in this life, there's no obstacle.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="shadow-sm mobile-hidden row-span-8 md:col-span-2">
+            <div class="mb-4 bg-[transparent] shadow-sm px-4 py-4">
+              <div class="text-lg font-bold bottom-border">popular</div>
+              <div class="popular-box flex flex-col gap-1 xl:gap-2 my-2 pt-4">
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+                <span
+                  ><span
+                    class="popular-item cursor-pointer underline-hover-primary over-1"
+                    >One Reason A million reasons to leave</span
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="foot"></div>
+    <script>
+      $(document).ready(function () {
+        $("#foot").load("foot-01.html");
+      });
+    </script>
+
+    <script>
+      let poplular = document.querySelectorAll(".popular-item");
+      console.log(poplular);
+      for (let i = 0; i < poplular.length; i++) {
+        poplular[i].innerHTML =
+          `<span class="font-bold text-lg mr-4 italic">${i + 1}.</span>` +
+          poplular[i].innerHTML;
+      }
+    </script>
+  </body>
+</html>

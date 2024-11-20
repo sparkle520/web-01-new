@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:alt" content="" />
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="/css/base.css" rel="stylesheet" type="text/css" />
+    <link href="/css/markdown.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#fafafa" />
+    <style type="text/tailwindcss">
+      html {
+        background: #f6f6fe;
+      }
+      .linear-bg::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        background: linear-gradient(to top, #f1f0ed 10%, transparent);
+      }
+      .toc .dir {
+        position: relative;
+        padding-bottom: 8px;
+        box-sizing: border-box;
+      }
+
+      #toc {
+        margin: 0;
+        padding-left: 15px;
+        box-sizing: border-box;
+      }
+
+      .toc .sider {
+        width: 2px;
+        height: 100%;
+        background: #eee;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        margin: auto;
+        bottom: 0;
+      }
+
+      .toc .siderbar {
+        display: flex;
+        width: 100%;
+        height: 20px;
+        line-height: 2;
+        background: rgb(1, 1, 1);
+        transition: all 0.1s;
+      }
+
+      .toc li {
+        height: 30px;
+        overflow: hidden;
+        box-sizing: border-box;
+        list-style: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .toc a {
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .toc .li-1 {
+        padding-left: 0px;
+      }
+
+      .toc .li-2 {
+        padding-left: 8px;
+      }
+
+      .toc .li-3 {
+        padding-left: 16px;
+      }
+
+      .toc .li-4 {
+        padding-left: 24px;
+      }
+
+      .toc .li-5 {
+        padding-left: 32px;
+      }
+
+      .toc .li-6 {
+        padding-left: 40px;
+      }
+
+      .toc .li-active {
+        font-weight: bold;
+      }
+      .underline-hover-primary {
+        background: linear-gradient(to right, #b9b8b8, #8f8f8f) no-repeat right
+          bottom;
+        transition: all;
+        background-size: 0 2px;
+        transition: background-size 700ms;
+      }
+      .underline-hover-primary:hover {
+        background-position-x: left;
+        background-size: 100% 2px;
+      }
+      .bottom-border {
+      padding-bottom: 0.5rem;
+      background: linear-gradient(to right, #1f1e22, #b9b8b8) no-repeat;
+      background-size: 100% 3px;
+      background-position: bottom;
+    }
+    @media (max-width: 640px) {
+  .sm-hidden {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .pc-hidden {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .share-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+}
+@media (min-width: 1536px) {
+}
+@media only screen and (max-width: 1024px) {
+  .tablet-hidden {
+    display: none;
+  }
+}
+
+    </style>
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <script>
+      $(document).ready(function () {
+        $("#header").load("header-01.html");
+      });
+    </script>
+
+    <div class="container mt-5 md:mt-10 flex flex-col mx-auto pb-32">
+      <div
+        class="w-full flex-row justify-center height-auto pb-40 flex relative gap-2 xl:gap-4 items-start"
+      >
+        <div
+          class="basis-16 mobile-hidden tablet-hidden flex flex-col gap-6 pt-16 sticky top-4 h-screen"
+        >
+          <!-- <svg
+            class="cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-share"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <path d="M8.7 10.7l6.6 -3.4" />
+            <path d="M8.7 13.3l6.6 3.4" />
+          </svg> -->
+          <svg
+            class="cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-text-size"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 7v-2h13v2" />
+            <path d="M10 5v14" />
+            <path d="M12 19h-4" />
+            <path d="M15 13v-1h6v1" />
+            <path d="M18 12v7" />
+            <path d="M17 19h2" />
+          </svg>
+          <svg
+            class="cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-tag-starred"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M7.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            <path
+              d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3z"
+            />
+            <path
+              d="M12.5 13.847l-1.5 1.153l.532 -1.857l-1.532 -1.143h1.902l.598 -1.8l.598 1.8h1.902l-1.532 1.143l.532 1.857z"
+            />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" viewBox="0 0 24 24"><path fill="#333333" d="m.058 1l9.267 12.39L0 23.462h2.099l8.163-8.82l6.596 8.82H24l-9.788-13.087L22.892 1h-2.1l-7.517 8.122L7.2 1zm3.087 1.546h3.28l14.488 19.37h-3.28L3.145 2.547Z"/></svg>
+          <svg class="translate-x-[-4px]" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.985 15.408l3.242 3.686c1.2 1.365 1.801 2.048 2.43 1.881c.628-.166.844-1.064 1.275-2.861l2.39-9.968c.665-2.768.997-4.151.259-4.834s-2.017-.175-4.575.84L5.14 8.865c-2.046.813-3.069 1.219-3.134 1.917a1 1 0 0 0 0 .214c.063.699 1.084 1.108 3.128 1.927c.925.371 1.388.557 1.72.912q.056.06.108.124c.306.38.436.88.697 1.876l.489 1.867c.253.97.38 1.456.713 1.522s.622-.336 1.201-1.141zm0 0l-.317-.33c-.362-.378-.543-.566-.543-.8s.18-.423.543-.8l3.573-3.724" color="#333333"/></svg>
+          <svg class="translate-x-[-4px]" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#333333"><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/><path d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01"/></g></svg>
+          <svg class="translate-x-[-4px] scale-110" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#333333" d="M12 3c5.344 0 10 3.643 10 8.5S17.344 20 12 20q-.789 0-1.546-.1l-2.9 1.932a1 1 0 0 1-1.535-1.028l.445-2.221C3.828 17.09 2 14.517 2 11.5C2 6.643 6.656 3 12 3m0 2c-4.597 0-8 3.073-8 6.5c0 2.335 1.544 4.475 4.017 5.635a1 1 0 0 1 .556 1.101l-.119.593l1.211-.808a1 1 0 0 1 .72-.154q.781.132 1.615.133c4.597 0 8-3.073 8-6.5S16.597 5 12 5m-2 2a1 1 0 0 1 1 1v4.485l.009-.117a1 1 0 0 1 .21-.493l2-2.5a1 1 0 0 1 1.562 1.25l-1.5 1.875l1.5 1.875a1 1 0 1 1-1.562 1.25l-2-2.5a1 1 0 0 1-.219-.61V15a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1"/></g></svg>
+        </div>
+        <div
+          id="post"
+          class="max-w-[45rem] bg-[#ffff] shadow-sm px-4 py-4 roundid-md text-content text-gray-700 divide-y divide-solid"
+        >
+        <div class="title-header w-full flex flex-col gap-4 mb-4">
+          <div>
+            <span
+              class="font-bold underline-hover-primary primary text-2xl cursor-pointer"
+              >Hot</span
+            >
+          </div>
+          <h1>Kids Who Use ChatGPT as a Study Assistant Do Worse on Tests</h1>
+            <div class="flex flex-row">
+              <div class="date text-sm text-gray-400">
+                2024-11-01 12:11 origin: internet
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="bg-slate-200 mt-4 w-full h-80 rounded-md flex items-center justify-center shadow-sm"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="/img/1288651.png"
+                alt=""
+              />
+            </div>
+            <h2>Test</h2>
+            <p>
+              Does AI actually help students learn?A recent experiment in a high
+              school provides a cautionary tale.
+            </p>
+            <p>
+              Researchers found that Turkish high school students who had access
+              to ChatGPT while doing practice math problems did worse on a math
+              test compared with students who didn't have access to ChatGPT.
+            </p>
+            <p>
+              Those with ChatGPT solved 48 percent more of the practice problems
+              correctly, but they ultimately scored 17 percent worse on a test
+              of the topic that the students were learning.
+            </p>
+            <p>
+              A third group of students had access to a revised version of
+              ChatGPT that functioned more like a tutor.This chatbot was
+              programmed to provide hints without directly divulging the
+              answer.The students who used it did spectacularly better on the
+              practice problems, solving 127 percent more of them correctly
+              compared with students who did their practice work without any
+              high-tech aids.
+            </p>
+            <p>
+              But on a test afterwards, these AI-tutored students did no
+              better.Students who just did their practice problems the old
+              fashioned way — on their own — matched their test scores.
+            </p>
+            <p>
+              The researchers titled their paper, "Generative AI Can Harm
+              Learning," to make clear to parents and educators that the current
+              crop of freely available AI chatbots can "substantially inhibit
+              learning."Even a fine-tuned version of ChatGPT designed to mimic a
+              tutor doesn't necessarily help.
+            </p>
+            <p>
+              The researchers believe the problem is that students are using the
+              chatbot as a "crutch."When they analyzed the questions that
+              students typed into ChatGPT, students often simply asked for the
+              answer.Students were not building the skills that come from
+              solving the problems themselves.
+            </p>
+            <p>
+              ChatGPT's errors also may have been a contributing factor.The
+              chatbot only answered the math problems correctly half of the
+              time.
+            </p>
+            <p>
+              Its arithmetic computations were wrong 8 percent of the time, but
+              the bigger problem was that its step-by-step approach for how to
+              solve a problem was wrong 42 percent of the time.The tutoring
+              version of ChatGPT was directly fed the correct solutions and
+              these errors were minimized.
+            </p>
+            <p>
+              ChatGPT is not the first technology to present a tradeoff in
+              education.Typewriters and computers reduce the need for
+              handwriting.Calculators reduce the need for arithmetic.
+            </p>
+            <div class="basis-16 share-hidden justify-end flex flex-row gap-2 py-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" viewBox="0 0 24 24"><path fill="#333333" d="m.058 1l9.267 12.39L0 23.462h2.099l8.163-8.82l6.596 8.82H24l-9.788-13.087L22.892 1h-2.1l-7.517 8.122L7.2 1zm3.087 1.546h3.28l14.488 19.37h-3.28L3.145 2.547Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.985 15.408l3.242 3.686c1.2 1.365 1.801 2.048 2.43 1.881c.628-.166.844-1.064 1.275-2.861l2.39-9.968c.665-2.768.997-4.151.259-4.834s-2.017-.175-4.575.84L5.14 8.865c-2.046.813-3.069 1.219-3.134 1.917a1 1 0 0 0 0 .214c.063.699 1.084 1.108 3.128 1.927c.925.371 1.388.557 1.72.912q.056.06.108.124c.306.38.436.88.697 1.876l.489 1.867c.253.97.38 1.456.713 1.522s.622-.336 1.201-1.141zm0 0l-.317-.33c-.362-.378-.543-.566-.543-.8s.18-.423.543-.8l3.573-3.724" color="#333333"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><g fill="none" stroke="#333333" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#333333"><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/><path d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01"/></g></svg>
+              <svg class="translate-y-[-2px] scale-110" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#333333" d="M12 3c5.344 0 10 3.643 10 8.5S17.344 20 12 20q-.789 0-1.546-.1l-2.9 1.932a1 1 0 0 1-1.535-1.028l.445-2.221C3.828 17.09 2 14.517 2 11.5C2 6.643 6.656 3 12 3m0 2c-4.597 0-8 3.073-8 6.5c0 2.335 1.544 4.475 4.017 5.635a1 1 0 0 1 .556 1.101l-.119.593l1.211-.808a1 1 0 0 1 .72-.154q.781.132 1.615.133c4.597 0 8-3.073 8-6.5S16.597 5 12 5m-2 2a1 1 0 0 1 1 1v4.485l.009-.117a1 1 0 0 1 .21-.493l2-2.5a1 1 0 0 1 1.562 1.25l-1.5 1.875l1.5 1.875a1 1 0 1 1-1.562 1.25l-2-2.5a1 1 0 0 1-.219-.61V15a1 1 0 1 1-2 0V8a1 1 0 0 1 1-1"/></g></svg>
+
+            </div>
+          </div>
+          <!-- recommend -->
+          <div class="w-full mx-auto mt-18">
+            <div class="font-bold mt-9 mb-4 text-xl">recommend</div>
+            <div
+              class="grid w-full min-h-[30rem] h-[60vh] md:min-h-[20rem] md:h-[20rem] grid-rows-3 md:grid-rows-2 grid-cols-2 md:grid-cols-3 grid-flow-col gap-2 md:gap-4"
+            >
+              <div class="row-span-1 col-span-1 relative">
+                <div class="w-full h-4/5 bg-[#eeeeee] overflow-hidden">
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div
+                  class="text-sm cursor-pointer absolute bottom-0 underline-hover-primary py-2 over-1"
+                >
+                  Recomposed By Max Richtesssr s s s s s
+                </div>
+              </div>
+              <div class="row-span-1 col-span-1 relative">
+                <div class="w-full h-4/5 bg-[#eeeeee] overflow-hidden">
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div
+                  class="text-sm cursor-pointer absolute bottom-0 underline-hover-primary py-2 over-1"
+                >
+                  Recomposed By Max Richtesssr s s s s s
+                </div>
+              </div>
+              <div class="row-span-1 col-span-1 relative">
+                <div class="w-full h-4/5 bg-[#eeeeee] overflow-hidden">
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div
+                  class="text-sm cursor-pointer absolute bottom-0 underline-hover-primary py-2 over-1"
+                >
+                  Recomposed By Max Richtesssr s s s s s
+                </div>
+              </div>
+              <div class="row-span-1 col-span-1 relative">
+                <div class="w-full h-4/5 bg-[#eeeeee] overflow-hidden">
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div
+                  class="text-sm cursor-pointer absolute bottom-0 underline-hover-primary py-2 over-1"
+                >
+                  Recomposed By Max Richtesssr s s s s s
+                </div>
+              </div>
+              <div class="row-span-1 col-span-1 relative">
+                <div class="w-full h-4/5 bg-[#eeeeee] overflow-hidden">
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div
+                  class="text-sm cursor-pointer absolute bottom-0 underline-hover-primary py-2 over-1"
+                >
+                  Recomposed By Max Richtesssr s s s s s
+                </div>
+              </div>
+              <div class="row-span-1 col-span-1 relative">
+                <div class="w-full h-4/5 bg-[#eeeeee] overflow-hidden">
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div
+                  class="text-sm cursor-pointer absolute bottom-0 underline-hover-primary py-2 over-1"
+                >
+                  Recomposed By Max Richtesssr s s s s s
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- right -->
+        <div
+          class="max-w-[21rem] tablet-hidden mobile-hidden flex flex-col px-3 py-4 sticky top-4 h-screen"
+        >
+          <div class="catalog-box mb-4 bg-[#ffff] shadow-sm px-4 py-4">
+            <div class="text-lg font-bold bottom-border">catalog</div>
+            <div class="toc flex flex-col gap-2 my-2 pt-4"></div>
+          </div>
+          <div class="mb-4 pt-4">
+            <ul
+              class="grid grid-rows-3 grid-cols-2 grid-flow-col gap-2 h-[28rem] my-2 divide-y divide-gray-400"
+            >
+              <li class="col-span-2">
+                <div
+                  class="test w-full h-full relative overflow-hidden linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <span
+                    class="inline overflow-hidden z-10 text-sm underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1 px-2 py-2 absolute bottom-0"
+                  >
+                    Oh yes we are time fliers scaling the walls of time
+                    climbers.
+                  </span>
+                </div>
+              </li>
+              <li class="pt-2">
+                <div
+                  class="test w-full h-full overflow-hidden relative linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <span
+                    class="inline overflow-hidden z-10 text-sm underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1 px-2 py-2 absolute bottom-0"
+                  >
+                    Tired of playing hide and seek with time and always coming
+                    just short.
+                  </span>
+                </div>
+              </li>
+              <li class="pt-2">
+                <div
+                  class="test w-full h-full relative overflow-hidden linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <span
+                    class="inline overflow-hidden z-10 text-sm underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1 px-2 py-2 absolute bottom-0"
+                  >
+                    Crying even when you're happy.
+                  </span>
+                </div>
+              </li>
+              <li class="pt-2">
+                <div
+                  class="test w-full h-full relative overflow-hidden linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <span
+                    class="inline overflow-hidden z-10 text-sm underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1 px-2 py-2 absolute bottom-0"
+                  >
+                    Smiling even when you're feeling lonely.
+                  </span>
+                </div>
+              </li>
+              <li class="pt-2">
+                <div
+                  class="test w-full h-full relative overflow-hidden linear-bg"
+                >
+                  <a class="w-full h-full" href="">
+                    <img
+                      class="w-full h-full object-cover cursor-pointer transition hover:scale-110"
+                      src="/img/1288651.png"
+                      alt=""
+                    />
+                  </a>
+                  <span
+                    class="inline overflow-hidden z-10 text-sm underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1 px-2 py-2 absolute bottom-0"
+                  >
+                    It's because a part of you has made it here before the rest
+                    has.
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="mb-4 px-4 pt-4">
+            <div class="text-lg font-bold bottom-border">sparkle</div>
+            <ul class="flex flex-col gap-3 my-2 divide-y divide-neutral-400">
+              <li class="pt-2">
+                <span
+                  class="underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1"
+                >
+                  Oh yes we are time fliers scaling the walls of time climbers.
+                </span>
+              </li>
+              <li class="pt-2">
+                <span
+                  class="overflow-hidden underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1"
+                >
+                  Tired of playing hide and seek with time and always coming
+                  just short.
+                </span>
+              </li>
+              <li class="pt-2">
+                <span
+                  class="overflow-hidden underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1"
+                >
+                  Crying even when you're happy.
+                </span>
+              </li>
+              <li class="pt-2">
+                <span
+                  class="overflow-hidden underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1"
+                >
+                  Smiling even when you're feeling lonely.
+                </span>
+              </li>
+              <li class="pt-2">
+                <span
+                  class="overflow-hidden underline-hover-primary cursor-pointer hover:primary text-slate-500 over-1"
+                >
+                  It's because a part of you has made it here before the rest
+                  has.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="foot"></div>
+    <script>
+      $(document).ready(function () {
+        $("#foot").load("foot-01.html");
+      });
+    </script>
+    <script>
+      window.addEventListener("load", () => tocList());
+
+      const tocList = () => {
+        const toc = document.querySelector(".toc");
+        const elements = document.querySelectorAll(
+          "#post h1,#post h2,#post h3"
+        );
+        let count = 0;
+        for (let i = 0; i < elements.length; i++) {
+          let uniqueId = "h-uniqueId-" + count++;
+          elements[i].id = uniqueId;
+        }
+        if (!elements.length) return;
+        const HList = ["H1", "H2", "H3"];
+        let str = `<div class="dir">\n<ul id="toc">`;
+        Array.from(elements, (v) => {
+          const H = HList.indexOf(v.nodeName) + 1 || 1;
+          str += `<li class="li li-${H}"><a href="javascript:void(0);" id="${v.id}" >${v.textContent}</a></li>\n`;
+        });
+        str += `</ul>\n`;
+        str += `<div class="sider"><span class="siderbar"><span></div>\n</div>`;
+        toc.insertAdjacentHTML("beforeend", str);
+
+        Array.from(elements, (v) => {
+          const btn = document.querySelector(`#toc #${v.id}`);
+          const ele = document.querySelector(`#post #${v.id}`);
+          if (!btn || !ele) return;
+          btn.addEventListener("click", (event) => {
+            const targetEle = document.querySelector(
+              `#post #${event.target.id}`
+            );
+            targetEle.scrollIntoView({
+              behavior: "smooth",
+            });
+            // window.scrollTo({ top: targetEle.offsetTop, behavior: "smooth" });
+          });
+        });
+
+        const observer = new IntersectionObserver(visibleChnage, {
+          rootMargin: "0px",
+        });
+        Array.from(elements, (item) => observer.observe(item));
+      };
+
+      const removeClass = () => {
+        const list = document.querySelectorAll("#toc .li a");
+        Array.from(list, (v) => v.classList.remove("li-active"));
+      };
+
+      const visibleChnage = (item) => {
+        var sider = document.querySelector(".siderbar");
+        var toc = document.querySelectorAll("#toc .li a");
+        item.forEach((observe) => {
+          const id = observe.target.getAttribute("id"),
+            anchor = document.querySelector(`#toc .li #${id}`);
+          if (observe.isIntersecting) {
+            removeClass();
+            const index = Array.from(toc, (v) => v.getAttribute("id")).indexOf(
+              id
+            );
+            anchor.classList.add("li-active");
+            sider.style.transform = `translateY(${index * 30}px)`;
+            return;
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
